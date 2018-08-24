@@ -22,8 +22,8 @@ var questionBank = [
     },
     {
         question: "Where does the Fellowship of the Ring encounter a Balrog?",
-        answers: ["Moria", "Caradhras", "Fangorn", "Lothlórien"],
-        correctAnswer: 0,
+        answers: ["Caradhras", "Fangorn", "Lothlórien", "Moria"],
+        correctAnswer: 3,
         pic: "assets/images/balrog.gif"
     },
     {
@@ -36,14 +36,14 @@ var questionBank = [
         question: "In the novel <i>The Fellowship of the Ring</i>, Glorfindel rides to the aid " +
             "of Frodo and enables him to cross the Ford of Bruinen, in order to reach Rivendell.  " +  
             "Who rides to help Frodo in the film version?",
-        answers: ["Elrond", "Galadriel", "Celeborn", "Arwen"],
-        correctAnswer: 3,
+        answers: ["Elrond", "Arwen", "Celeborn", "Galadriel"],
+        correctAnswer: 1,
         pic: "assets/images/arwen.gif"
     },
     {
         question: "What is the name of Aragorn's sword, once it has been reforged from the shards of Narsil?",
-        answers: ["Palantír", "Andúril", "Glamdring", "Sting"],
-        correctAnswer: 1,
+        answers: ["Andúril", "Palantír", "Glamdring", "Sting"],
+        correctAnswer: 0,
         pic: "assets/images/anduril.gif"
     },
     {
