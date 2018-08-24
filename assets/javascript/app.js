@@ -1,14 +1,49 @@
 // an array of questions and answers, including the correct answer
 var questionBank = [
     {
-        question: "Question 1",
-        answers: ["a", "b", "c", "d"],
+        question: "What is the name of Aragorn's horse (in the film versions " +
+            "of <i>The Two Towers</i> and <i>The Return of the King</i>)?",
+        answers: ["Shadowfax", "Roheryn", "Brego", "Asfaloth"],
+        correctAnswer: 2
+    },
+    {
+        question: "Who delivers the final blow to kill the Witch-king of Angmar, " +
+            "or the Lord of the Nazgûl, at the Battle of the Pelennor Fields?",
+        answers: ["Aragorn", "Gandalf", "Legolas", "Éowyn"],
+        correctAnswer: 3
+    },
+    {
+        question: "What type of being is Treebeard?",
+        answers: ["Elf", "Ent", "Dwarf", "Hobbit"],
+        correctAnswer: 1
+    },
+    {
+        question: "In which one of the following languages is <i>mellon</i> a word meaning friend?",
+        answers: ["Entish", "Quenya", "Sindarin", "Rohirric"],
+        correctAnswer: 2
+    },
+    {
+        question: "Where does the Fellowship of the Ring encounter a Balrog?",
+        answers: ["Moria", "Caradhras", "Fangorn", "Lothlórien"],
         correctAnswer: 0
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d"],
+        question: "In the film version of the <i>The Fellowship of the Ring</i>, Arwen rides to the aid " +
+            "of Frodo and enables him to cross the Ford of Bruinen, in order to reach Rivendell.  " +  
+            "Who rides to help Frodo in the novel?",
+        answers: ["Elrond", "Galadriel", "Celeborn", "Glorfindel"],
+        correctAnswer: 3
+    },
+    {
+        question: "What is the name of Aragorn's sword, once it has been reforged from the shards of Narsil?",
+        answers: ["Sting", "Andúril", "Glamdring", "Palantír"],
         correctAnswer: 1
+    },
+    {
+        question: "After reaching a \"hasty\" decision at their three-day Entmoot, which one of the following " +
+            "do the Ents attack?",
+        answers: ["Mordor", "Osgiliath", "Isengard", "Cirith Ungol"],
+        correctAnswer: 2
     }
 ]
 
@@ -18,7 +53,6 @@ window.onload = function() {
 
 var intervalId;
 
-var quizGoing = false;
 var clockTicking = false;
 
 var game = {
@@ -45,7 +79,7 @@ var game = {
         $('#button1').on("click", game.getAnswer1);
         $('#button2').on("click", game.getAnswer2);
         $('#button3').on("click", game.getAnswer3);
-
+        
         game.startClock();
 
     },
@@ -190,6 +224,9 @@ var game = {
                 console.log('incorrect');
                 $('#question').html("Incorrect!");
                 $('#answers').empty();
+                var current = questionBank[game.questionIndex];
+                var correct = current.answers[current.correctAnswer];
+                $('#answers').html("The correct answer was: " + correct);
             }
         }
     },

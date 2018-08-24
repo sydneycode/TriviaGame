@@ -1,12 +1,27 @@
+body, html {
+    height: 100%;
+}
+
 #wrapper {
-    /* border: 5px solid red; */
+    background-image: url("../images/LotR-bkgd1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #main-content {
-    /* border: 5px solid red; */
-    /* background-color: black; */
+    background: rgba(255, 255, 255, 0.8);
+    padding-bottom: 20px;
+    
 }
 
 #trivia {
     /* border: 5px solid red; */
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    margin: 0 10px;
 }
