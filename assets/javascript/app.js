@@ -4,46 +4,54 @@ var questionBank = [
         question: "What is the name of Aragorn's horse (in the film versions " +
             "of <i>The Two Towers</i> and <i>The Return of the King</i>)?",
         answers: ["Shadowfax", "Roheryn", "Brego", "Asfaloth"],
-        correctAnswer: 2
+        correctAnswer: 2,
+        pic: "assets/images/brego.gif"
     },
     {
         question: "Who delivers the final blow to kill the Witch-king of Angmar, " +
             "or the Lord of the Nazgûl, at the Battle of the Pelennor Fields?",
         answers: ["Aragorn", "Gandalf", "Legolas", "Éowyn"],
-        correctAnswer: 3
+        correctAnswer: 3,
+        pic: "assets/images/eowyn.gif"
     },
     {
         question: "What type of being is Treebeard?",
         answers: ["Elf", "Ent", "Dwarf", "Hobbit"],
-        correctAnswer: 1
-    },
-    {
-        question: "In which one of the following languages is <i>mellon</i> a word meaning friend?",
-        answers: ["Entish", "Quenya", "Sindarin", "Rohirric"],
-        correctAnswer: 2
+        correctAnswer: 1,
+        pic: "assets/images/treebeard.gif"
     },
     {
         question: "Where does the Fellowship of the Ring encounter a Balrog?",
         answers: ["Moria", "Caradhras", "Fangorn", "Lothlórien"],
-        correctAnswer: 0
+        correctAnswer: 0,
+        pic: "assets/images/balrog.gif"
     },
     {
-        question: "In the film version of the <i>The Fellowship of the Ring</i>, Arwen rides to the aid " +
+        question: "In which one of the following languages is <i>mellon</i> a word meaning friend?",
+        answers: ["Entish", "Quenya", "Sindarin", "Rohirric"],
+        correctAnswer: 2,
+        pic: "assets/images/moriagate.gif"
+    },
+    {
+        question: "In the novel <i>The Fellowship of the Ring</i>, Glorfindel rides to the aid " +
             "of Frodo and enables him to cross the Ford of Bruinen, in order to reach Rivendell.  " +  
-            "Who rides to help Frodo in the novel?",
-        answers: ["Elrond", "Galadriel", "Celeborn", "Glorfindel"],
-        correctAnswer: 3
+            "Who rides to help Frodo in the film version?",
+        answers: ["Elrond", "Galadriel", "Celeborn", "Arwen"],
+        correctAnswer: 3,
+        pic: "assets/images/arwen.gif"
     },
     {
         question: "What is the name of Aragorn's sword, once it has been reforged from the shards of Narsil?",
-        answers: ["Sting", "Andúril", "Glamdring", "Palantír"],
-        correctAnswer: 1
+        answers: ["Palantír", "Andúril", "Glamdring", "Sting"],
+        correctAnswer: 1,
+        pic: "assets/images/anduril.gif"
     },
     {
         question: "After reaching a \"hasty\" decision at their three-day Entmoot, which one of the following " +
             "do the Ents attack?",
         answers: ["Mordor", "Osgiliath", "Isengard", "Cirith Ungol"],
-        correctAnswer: 2
+        correctAnswer: 2,
+        pic: "assets/images/ents.gif"
     }
 ]
 
@@ -208,7 +216,7 @@ var game = {
             $('#answers').empty();
             var current = questionBank[game.questionIndex];
             var correct = current.answers[current.correctAnswer];
-            $('#answers').html("The correct answer was: " + correct);
+            $('#answers').html("<p class='correct'>The correct answer was: " + correct + "</p>");
             game.timedOut = false;
         }
         else {
@@ -226,9 +234,10 @@ var game = {
                 $('#answers').empty();
                 var current = questionBank[game.questionIndex];
                 var correct = current.answers[current.correctAnswer];
-                $('#answers').html("The correct answer was: " + correct);
+                $('#answers').html("<p class='correct'>The correct answer was: " + correct + "</p>");
             }
         }
+        game.addPic();
     },
 
     showQuizResults: function() {
@@ -252,6 +261,12 @@ var game = {
             game.startQuestion();
         });
         
+    },
+
+    addPic: function() {
+        var current = questionBank[game.questionIndex];
+        var currentPic = current.pic;
+        $('#answers').append("<img src='" + currentPic + "'>");
     }
 }
 
